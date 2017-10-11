@@ -2,11 +2,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import ContactsList from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+// ReactDOM.render(
+//     <App name="Ivan" action="coding"/>,
+//     document.getElementById('title')
+// );
+
 ReactDOM.render(
-    <App name="123"/>,
-    document.getElementById('root')
+    <ContactsList />,
+    document.getElementById('contacts')
 );
+
+
+
+
 registerServiceWorker();
