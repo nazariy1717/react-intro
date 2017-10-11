@@ -1,7 +1,4 @@
-
-import React, {Component} from 'react';
-
-
+import React from 'react';
 
 // class App extends Component{
 //     render(){
@@ -9,7 +6,7 @@ import React, {Component} from 'react';
 //     }
 // }
 
-let CONTACTS = [
+var ContactsArray = [
     {
         id: 1,
         name: 'Darth Vader',
@@ -33,25 +30,50 @@ let CONTACTS = [
     }
 ];
 
-class Contact extends Component{
-    render(){
-        return(
-            <li>
-                <img src={this.props.image} width="60px" height="60px" />
-                <div>{this.props.name}</div>
-                <div>{this.props.phoneNumber}</div>
+class Contact extends React.Component {
+    render() {
+        return (
+            <li className="contact">
+                <img className="contact-image" src={this.props.image} width="60px" height="60px" alt=""/>
+                <div className="contact-info">
+                    <div className="contact-name">{this.props.name}</div>
+                    <div className="contact-number">{this.props.phoneNumber}</div>
+                </div>
             </li>
         );
     }
 }
 
-class ContactsList extends Component{
-    render(){
-        return(
-            <div>
-                <ul>
+
+class ContactsList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            displayedContacts: ContactsArray
+        };
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+
+    handleSearch(event) {
+        let searchQuery = event.target.value.toLowerCase();
+        let displayedContacts = ContactsArray.filter(function (el) {
+            let searchValue = el.name.toLowerCase();
+            return searchValue.indexOf(searchQuery) !== -1;
+        });
+        this.setState({
+            displayedContacts: displayedContacts
+        });
+
+    }
+
+    render() {
+        return (
+            <div className="contacts">
+                <input type="text" placeholder="Search..." className="search-field" onChange={this.handleSearch}/>
+                <ul className="contacts-list">
                     {
-                        CONTACTS.map(function(el){
+                        this.state.displayedContacts.map(function (el) {
                             return <Contact
                                 key={el.id}
                                 name={el.name}
@@ -62,12 +84,9 @@ class ContactsList extends Component{
                     }
                 </ul>
             </div>
-        )
+        );
     }
 }
 
 
-
-
-// export default App;
 export default ContactsList;
