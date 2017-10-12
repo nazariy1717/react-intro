@@ -1,7 +1,5 @@
 import React from 'react';
 
-import DropDown from './dropdown';
-
 // first app
 // class App extends React.Component{
 //     render(){
@@ -94,18 +92,4 @@ class ContactsList extends React.Component {
 }
 
 
-
-// dropdown
-
-class App extends React.Component{
-    render(){
-        return (
-            <div>
-                <DropDown />
-            </div>
-        )
-    }
-}
-
-
-export default App;
+export default ContactsList;
