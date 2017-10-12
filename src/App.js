@@ -1,11 +1,16 @@
 import React from 'react';
 
-// class App extends Component{
+import DropDown from './dropdown';
+
+// first app
+// class App extends React.Component{
 //     render(){
 //         return <h1>Hi there my name is  {this.props.name} and i love { this.props.action}</h1>;
 //     }
 // }
 
+
+// Contacts search dropdown
 var ContactsArray = [
     {
         id: 1,
@@ -89,4 +94,18 @@ class ContactsList extends React.Component {
 }
 
 
-export default ContactsList;
+
+// dropdown
+
+class App extends React.Component{
+    render(){
+        return (
+            <div>
+                <DropDown />
+            </div>
+        )
+    }
+}
+
+
+export default App;

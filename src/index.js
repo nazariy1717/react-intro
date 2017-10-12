@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import ContactsList from './App';
+import DropDown from './dropdown';
 import registerServiceWorker from './registerServiceWorker';
 
 // ReactDOM.render(
@@ -10,12 +11,16 @@ import registerServiceWorker from './registerServiceWorker';
 //     document.getElementById('title')
 // );
 
+
+
+// ReactDOM.render(
+//     <ContactsList />,
+//     document.getElementById('contacts')
+// );
+
 ReactDOM.render(
-    <ContactsList />,
-    document.getElementById('contacts')
+    <DropDown />,
+    document.getElementById('dropdown')
 );
-
-
-
 
 registerServiceWorker();
