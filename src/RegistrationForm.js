@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React  from 'react';
 
-class RegistrationForm extends Component {
+class RegistrationForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -23,7 +23,6 @@ class RegistrationForm extends Component {
         })
 
     }
-
 
     render() {
         return (
