@@ -6,22 +6,20 @@ import './App.css';
 
 
 
-import ContactsList from './App';
-import Main from './Main';
+import Tooltip from './Tooltip';
 
 
 
 import registerServiceWorker from './registerServiceWorker';
 
 
-ReactDOM.render(
-    <ContactsList />,
-    document.getElementById('contacts')
-);
+
 
 ReactDOM.render(
-    <Main />,
-    document.getElementById('header')
+    <div>
+        never <Tooltip text="hover me">fsfdsdf</Tooltip>
+    </div>,
+    document.getElementById('content')
 );
 
 
