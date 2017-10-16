@@ -24,16 +24,22 @@ class RegistrationForm extends React.Component {
 
     }
 
+    submit(e){
+        e.preventDefault();
+        console.log('submit', this.testInput.value);
+    }
+
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form>
                 <input
                     type="text"
                     placeholder="Email"
                     value={this.state.email}
                     onChange={this.handleEmailChange}
+                    ref={(input) => this.testInput = input}
                 />
-                <button>Save</button>
+                <button onClick={this.submit.bind(this)}>Save</button>
             </form>
         )
     }
