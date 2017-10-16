@@ -7,6 +7,7 @@ import './App.css';
 
 
 import Tooltip from './Tooltip';
+import TimerWrapper from './Timer';
 
 
 
@@ -14,11 +15,8 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 
-
 ReactDOM.render(
-    <div>
-        never <Tooltip text="hover me">fsfdsdf</Tooltip>
-    </div>,
+   <TimerWrapper />,
     document.getElementById('content')
 );
 
