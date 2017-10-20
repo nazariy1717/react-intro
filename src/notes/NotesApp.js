@@ -8,36 +8,10 @@ export default class NotesApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notes: [
-                {
-                    id: 0,
-                    text: 'Lorem ipsum dolor sit amet, camet, consectetur aonsectetur adipisicing elit. Asperiores, hic.',
-                    color: '#FFD700'
-                },{
-                    id: 1,
-                    text: 'Lore fsdf sdfm sd asd asd asd asd asd asd as sum dolor sit a ipd asd asd asd asd asd asd asd asd as sum dolor sit amet, c dasd asonsectetur adipisicing elit. Asperiores, hic.',
-                    color: '#456FFC'
-                },{
-                    id: 2,
-                    text: 'Lorem sdf sdf ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, hic.',
-                    color: '#cecece'
-                },
-                {
-                    id: 3,
-                    text: 'Lorem ipsum dolor sit amet, consec asd asd asd atetur adipisicing elit. Asperiores, hic.',
-                    color: '#FFD700'
-                },{
-                    id: 4,
-                    text: 'Lore fsdf sdfm ipd asd asd asd asd asd asd asd asd as sum dolor sit amet, c dasd asonsectetur adipisicing elit. Asperiores, hic.',
-                    color: '#456FFC'
-                },{
-                    id: 5,
-                    text: 'Lorem sdf sdf ipsum dolor sit amet, consectetur adipisicing elit.   dolor sit amet, consectetur adipisicin dolor sit amet, consectetur adipisicin Asperiores, hic.',
-                    color: '#cecece'
-                }
-            ]
+            notes: []
         };
         this.handleNoteAdd = this.handleNoteAdd.bind(this);
+        this.handleNoteDelete = this.handleNoteDelete.bind(this);
     }
 
     componentDidMount(){
@@ -49,10 +23,22 @@ export default class NotesApp extends React.Component {
         }
     }
 
+    handleNoteDelete(note) {
+        let noteId = note.id;
+        let newNotes = this.state.notes.filter(function(note) {
+            return note.id !== noteId;
+        });
+        this.setState({ notes: newNotes });
+    }
+
+    componentDidUpdate(){
+        this._updateLocalStorage();
+    }
+
     handleNoteAdd(newNote){
         let newNotes = this.state.notes.slice();
         newNotes.unshift(newNote);
-        this.setState({notes: newNotes},);
+        this.setState({notes: newNotes},this._updateLocalStorage);
     }
 
     render() {
@@ -60,7 +46,7 @@ export default class NotesApp extends React.Component {
             <div className="note-app">
                 <h2 className="app-header">NotesApp</h2>
                 <NoteEditor onNoteAdd={this.handleNoteAdd} />
-                <NotesGrid notes={this.state.notes}/>
+                <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete} />
             </div>
         )
     }
