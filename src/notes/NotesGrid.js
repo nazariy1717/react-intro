@@ -15,6 +15,9 @@ export default class NotesGrid extends React.Component {
     render() {
         console.log(this.props);
         let onNoteDelete = this.props.onNoteDelete;
+        let style = {
+            gutter: 20
+        };
         return (
             <div className="notes-grid" ref="grid">
                 <Masonry>
@@ -23,6 +26,7 @@ export default class NotesGrid extends React.Component {
                             return (
                                 <Note
                                     key={note.id}
+                                    style={style}
                                     onDelete={onNoteDelete.bind(null, note)}
                                     color={note.color}>
                                     {note.text}

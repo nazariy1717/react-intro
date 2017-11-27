@@ -6,6 +6,8 @@ import './notes/style.css';
 
 // import ContactsList from './App';
 // import Timer from './lesson_2';
+
+
 import NotesApp from './notes/NotesApp';
 
 import registerServiceWorker from './registerServiceWorker';

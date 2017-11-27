@@ -6,7 +6,7 @@ export default class Timer extends React.Component {
         super(props);
         this.state = {
             seconds: 0
-        }
+        };
         this.tick = this.tick.bind(this);
     }
 

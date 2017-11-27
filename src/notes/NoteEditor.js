@@ -39,6 +39,7 @@ export default class NoteEditor extends React.Component {
                     value={this.state.text}
                     onChange={this.handleTextChange}
                 />
+                <input type="color" />
 
                 <button className="add-button" onClick={this.handleNoteAdd}>ADD</button>
             </div>
