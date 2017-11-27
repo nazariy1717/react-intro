@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.App {
+    background-color: #eaeaea;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-bar {
+    display: flex;
+    background-color: #00bcd4;
+    height: 50px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.menu-item {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.menu-item-link {
+    font-size: 17px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.content {
+    height: 100%;
+}
+
+.AboutPage {
+    color: #222;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.title {
+    color: #999;
+}
+
+.InboxPage {
+    display: flex;
+    flex-flow: column;
+    background-color: #cecece;
+}
+.messages {
+    flex: 1;
+}
+
+.message-container {
+    flex: 1;
+}
+
+.Message {
+    padding: 16px;
+    background-color: #222;
+}
+
+.MessagePreview {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #222;
+    border-right: 1px solid #222;
+    cursor: pointer;
+}
+
+.title,
+.from {
+    font-weight: bold;
+}
+
+.title {
+    font-size: 16px;
+    color: #222;
+}
+
+.from {
+    font-size: 14px;
+    color: #222;
+}

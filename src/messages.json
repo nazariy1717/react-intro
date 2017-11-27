@@ -1,0 +1,37 @@
+[
+  {
+    "id": "11",
+    "subject": "Hi there",
+    "senderName": "Mark",
+    "senderEmail": "sender@gmail.com",
+    "body": "loremloremloremloremloremlorem"
+  },
+  {
+    "id": "22",
+    "subject": "Hi there",
+    "senderName": "Mark",
+    "senderEmail": "sender@gmail222.com",
+    "body": "loremloremloremloremloremlorem"
+  },
+  {
+    "id": "33",
+    "subject": "Hi there there",
+    "senderName": "Mark",
+    "senderEmail": "sender@gmail33.com",
+    "body": "loremloremloremloremloremlorem"
+  },
+  {
+    "id": "44",
+    "subject": "Hi there there there",
+    "senderName": "Mark",
+    "senderEmail": "sender@gmail44.com",
+    "body": "loremloremloremloremloremlorem"
+  },
+  {
+    "id": "55",
+    "subject": "Hi thereHi",
+    "senderName": "Mark",
+    "senderEmail": "sender@gmail88.com",
+    "body": "loremloremloremloremloremlorem"
+  }
+]

@@ -1,20 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './App.css';
-import './notes/style.css';
 
-// import ContactsList from './App';
-// import Timer from './lesson_2';
+import { BrowserRouter, Route } from 'react-router-dom';
 
+import App from './App';
+import AboutPage from './components/AboutPage';
+import InboxPage from './components/InboxPage';
+import Message from './components/Message';
 
-import NotesApp from './notes/NotesApp';
+import './styles/style.css';
+
 
 import registerServiceWorker from './registerServiceWorker';
 
 
 ReactDOM.render(
-   <NotesApp />,
+   <BrowserRouter>
+       <App>
+           <Route path='/about' component={AboutPage} />
+           <Route path='/inbox' component={InboxPage} >
+               <Route path='/inbox/messages/:messageId' component={Message} />
+           </Route>
+
+       </App>
+
+   </BrowserRouter>,
     document.getElementById('content')
 );
 
