@@ -2,16 +2,16 @@ import React from 'react';
 
 import messages from '../messages.json';
 
-import './Message.less';
+// import './Message.less';
 
-const Message = React.createClass({
+class Message extends React.Component{
     getInitialState() {
         const { messageId } = this.props.params;
 
         return {
             message: messages.find(message => message.id === messageId)
         };
-    },
+    }
 
     componentWillReceiveProps(nextProps) {
         const { messageId: prevId } = this.props.params;
@@ -22,7 +22,7 @@ const Message = React.createClass({
                 message: messages.find(message => message.id === nextId)
             });
         }
-    },
+    }
 
     render() {
         const { message } = this.state;
@@ -37,6 +37,6 @@ const Message = React.createClass({
             </div>
         );
     }
-});
+}
 
 export default Message;

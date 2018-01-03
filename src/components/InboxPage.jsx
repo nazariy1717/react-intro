@@ -1,19 +1,22 @@
 import React from 'react';
 
 import MessagePreview from './MessagePreview';
-
+import PropTypes from 'prop-types';
 import messages from '../messages.json';
 
 
 export default class InboxPage extends React.Component {
+
 
     constructor(props) {
         super(props);
         this.state = { messages };
     }
 
+
+
     handlePreviewClick(messageId){
-        alert(messageId);
+        this.context.router.push(`/inbox/messages/${messageId}`);
     }
 
     render() {
@@ -39,4 +42,6 @@ export default class InboxPage extends React.Component {
     }
 }
 
-
+InboxPage.PropTypes  = {
+    router: React.PropTypes.object.isRequired
+};
